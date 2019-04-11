@@ -34,7 +34,7 @@ func main() {
   pk, _ := rsa.GenerateKey(rand.Reader, 2048)
   derBytes, _ := x509.CreateCertificate(rand.Reader, &template, &template, &pk.PublicKey, pk)
   certOut, _ := os.Create("cert.pem")
-  pem.Encode(certOut, &pem.Block{Type: "CERTIFACTE", Bytes: derBytes})
+  pem.Encode(certOut, &pem.Block{Type: "CERTIFICATE", Bytes: derBytes})
   certOut.Close()
 
   keyOut, _ := os.Create("key.pem")
