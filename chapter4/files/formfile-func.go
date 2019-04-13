@@ -1,18 +1,19 @@
-/*
-  If the URL  and the form have the same key the will be both placed in a slice
-  with the form value always prioritized before the URL value.
-*/
-
 package main
 
 import (
   "fmt"
+  "io/ioutil"
   "net/http"
 )
 
 func process(w http.ResponseWriter, r *http.Request) {
-  r.ParseForm() // Parse the request form
-  fmt.Fprintln(w, r.Form) // Access the Form field
+  file, _, err := r.FormFile("uploaded")
+  if err == nil {
+    data, err := ioutil.ReadAll(file)
+    if err == nil {
+      fmt.Fprintln(w, string(data))
+    }
+  }
 }
 
 func main() {
