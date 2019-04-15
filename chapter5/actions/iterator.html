@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html, charset=utf-8">
+    <title>Go Web Programming</title>
+  </head>
+  <body>
+    <!--
+    <ul>
+      {{ range . }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    -->
+    <p>
+      Variant that allows to display a fallback in the case the iterator is empty
+    </p>
+    <ol>
+    {{ range . }}
+      <li>{{ . }}</li>
+    {{ else }}
+      <h4>Nothing to show</h4>
+    {{ end }}
+    </ol>
+  </body>
+</html>
