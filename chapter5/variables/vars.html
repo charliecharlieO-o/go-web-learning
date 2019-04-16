@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html, charset=utf-8">
+    <title>Go Web Programming</title>
+  </head>
+  <body>
+    <ol>
+    {{ range $key, $value := . }}
+      <li>The key is {{ $key }} and the value is {{ $value }}</li>
+    {{ end }}
+    </ol>
+  </body>
+</html>
