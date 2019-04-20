@@ -26,8 +26,7 @@ func init() {
   var err error
   // Open returns a pointer to a sql.DB struct, the connection will be setup lazily
   // as needed
-  Db, err = sql.Open("postgres",
-    "user=dev dbname=goweb password=developer sslmode=disable")
+  Db, err = sql.Open("postgres", "user=dev dbname=goweb password=developer sslmode=disable")
   if err != nil {
     panic(err)
   }
